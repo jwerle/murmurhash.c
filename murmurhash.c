@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <murmurhash.h>
+#include "murmurhash.h"
 
 uint32_t
 murmurhash (const char *key, uint32_t len, uint32_t seed) {
@@ -20,8 +20,8 @@ murmurhash (const char *key, uint32_t len, uint32_t seed) {
   uint32_t h = 0;
   uint32_t k = 0;
   uint8_t *d = (uint8_t *) key; // 32 bit extract from `key'
-  const uint32_t *chunks = 0;
-  const uint8_t *tail = 0; // tail - last 8 bytes
+  const uint32_t *chunks = NULL;
+  const uint8_t *tail = NULL; // tail - last 8 bytes
   int i = 0;
   int l = len / 4; // chunk length
 

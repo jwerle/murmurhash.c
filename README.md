@@ -34,6 +34,18 @@ main (void) {
 }
 ```
 
+A command line executable is also available:
+
+```
+$ echo -n kinkajou | murmur
+3067714808
+```
+
+```
+$ echo -n panda | murmur --seed=10
+1406483717
+```
+
 ## api
 
 ```c

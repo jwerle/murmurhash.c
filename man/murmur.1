@@ -1,0 +1,58 @@
+.\" Generated with Ronnjs 0.3.8
+.\" http://github.com/kapouer/ronnjs/
+.
+.TH "BEAUFORT" "1" "May 2014" "" ""
+.
+.SH "NAME"
+\fBbeaufort\fR \-\- Command line Beaufort Cipher utility
+.
+.SH "SYNOPSIS"
+\fBmurmur\fR [\-hV] [options]
+.
+.SH "OPTIONS"
+  \-V, \-\-version
+      output program version
+.
+.P
+  \-h, \-\-help
+      output help information
+.
+.P
+  \-\-seed=[seed]
+      hash seed (optional)
+.
+.SH "EXAMPLES"
+  \fB
+  $ echo \-n kinkajou | murmur
+  3067714808
+  \fR
+.
+.P
+  \fB
+  $ echo \-n panda | murmur \-\-seed=10
+  1406483717
+  \fR
+.
+.SH "AUTHOR"
+.
+.IP "\(bu" 4
+Joseph Werle \fIjoseph\.werle@gmail\.com\fR
+.
+.IP "" 0
+.
+.SH "REPORTING BUGS"
+.
+.IP "\(bu" 4
+\fIhttps://github\.com/jwerle/murmurhash\.c/issues\fR
+.
+.IP "" 0
+.
+.SH "SEE ALSO"
+.
+.IP "\(bu" 4
+\fIhttps://github\.com/jwerle/murmurhash\.c\fR
+.
+.IP "" 0
+.
+.SH "LICENSE"
+MIT

@@ -8,6 +8,8 @@
 #ifndef MURMURHASH_H
 #define MURMURHASH_H 1
 
+#define MURMURHASH_VERSION "0.0.2"
+
 /**
  * Returns a murmur hash of `key' based on `seed'
  * using the MurmurHash3 algorithm

@@ -10,7 +10,7 @@
 #include <string.h>
 #include <inttypes.h>
 #include <assert.h>
-#include <murmurhash.h>
+#include "murmurhash.h"
 
 int
 main (void) {

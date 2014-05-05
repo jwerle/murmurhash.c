@@ -1,6 +1,6 @@
 {
   "name": "murmurhash",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repo": "jwerle/murmurhash.c",
   "description": "MurmurHash3 general hash bashed lookup function implementation",
   "keywords": ["murmur", "hash", "murmurhash"],
