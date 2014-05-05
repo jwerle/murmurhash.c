@@ -41,7 +41,7 @@ uint32_t
 murmurhash (const char *key, uint32_t len, uint32_t seed);
 ```
 
-Returns a murmur hash of `key' based on `seed' using the MurmurHash3 algorithm.
+Returns a murmur hash of `key` based on `seed` using the MurmurHash3 algorithm.
 
 ## license
 
