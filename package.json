@@ -1,0 +1,9 @@
+{
+  "name": "murmurhash",
+  "version": "0.0.1",
+  "repo": "jwerle/murmurhash.c",
+  "description": "MurmurHash3 general hash bashed lookup function implementation",
+  "keywords": ["murmur", "hash", "murmurhash"],
+  "license": "MIT",
+  "src": [ "murmurhash.h", "murmurhash.c" ]
+}
