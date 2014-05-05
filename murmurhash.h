@@ -9,7 +9,8 @@
 #define MURMURHASH_H 1
 
 /**
- *
+ * Returns a murmur hash of `key' based on `seed'
+ * using the MurmurHash3 algorithm
  */
 
 uint32_t

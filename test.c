@@ -48,6 +48,7 @@ main (void) {
   t("hey", seed, 0x12f94418);
   t("dude", seed, 0xef0487f3);
   t("test", seed, 0xba6bd213);
+  t("kinkajou", seed, 0xb6d99cf8);
 
 
   seed = 1;
