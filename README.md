@@ -17,10 +17,18 @@ of MurmurHash.
 $ clib install jwerle/murmurhash.c
 ```
 
+source:
+
+```sh
+$ git clone git@github.com:jwerle/murmurhash.c.git
+$ cd murmurhash.c
+$ make
+$ make install
+```
+
 ## example
 
 ```c
-
 #include <stdlib.h>
 #include <string.h>
 #include <murmurhash.h>
@@ -36,12 +44,12 @@ main (void) {
 
 A command line executable is also available:
 
-```
+```sh
 $ echo -n kinkajou | murmur
 3067714808
 ```
 
-```
+```sh
 $ echo -n panda | murmur --seed=10
 1406483717
 ```
