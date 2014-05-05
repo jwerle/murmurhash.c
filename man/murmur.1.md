@@ -1,4 +1,4 @@
-beaufort(1) -- Command line Beaufort Cipher utility
+murmur(1) -- Command line MurmurHash3 tility
 =================================
 
 ## SYNOPSIS
