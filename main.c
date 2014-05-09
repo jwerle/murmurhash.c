@@ -1,6 +1,6 @@
 
 /**
- * `main.c' - libbeaufort
+ * `main.c' - murmurhash
  *
  * copyright (c) 2014 joseph werle <joseph.werle@gmail.com>
  */
