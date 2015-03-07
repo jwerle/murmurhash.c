@@ -8,6 +8,8 @@
 #ifndef MURMURHASH_H
 #define MURMURHASH_H 1
 
+#include <stdint.h>
+
 #define MURMURHASH_VERSION "0.0.3"
 
 #ifdef __cplusplus
