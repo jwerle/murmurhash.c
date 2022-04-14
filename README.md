@@ -1,7 +1,9 @@
 murmurhash
-===========
+==========
 
-MurmurHash3 general hash bashed lookup function implementation
+![tests](https://github.com/jwerle/murmurhash.c/actions/workflows/tests.yml/badge.svg)
+
+> MurmurHash3 general hash bashed lookup function implementation
 
 ## about
 
