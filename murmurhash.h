@@ -9,7 +9,7 @@
 
 #include <stdint.h>
 
-#define MURMURHASH_VERSION "0.0.3"
+#define MURMURHASH_VERSION "0.1.0"
 
 #ifdef __cplusplus
 extern "C" {
