@@ -66,11 +66,10 @@ read_stdin () {
 
 #define isopt(opt, str) (0 == strncmp(opt, str, strlen(str)))
 
-#define setopt(opt, key, var) {                       \
-    char tmp = 0;                                     \
-    size_t len = strlen(key) + 1;                     \
-    for (int i = 0; i < len; ++i) { tmp = *opt++; }   \
-    var = opt;                                        \
+#define setopt(opt, key, var) {               \
+  size_t len = strlen(key) + 1;               \
+  for (int i = 0; i < len; ++i) { (*opt)++; } \
+  var = opt;                                  \
 }
 
 int
@@ -83,8 +82,6 @@ main (int argc, char **argv) {
   // parse opts
   {
     char *opt = NULL;
-    char tmp = 0;
-
     opt = *argv++; // unused
 
     while ((opt = *argv++)) {
@@ -106,7 +103,7 @@ main (int argc, char **argv) {
             break;
 
           default:
-            tmp = *opt--;
+            (*opt)--;
             // error
             fprintf(stderr, "unknown option: `%s'\n", opt);
             usage();
