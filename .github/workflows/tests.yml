@@ -1,0 +1,32 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  linux:
+    name: Linux
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: System Setup
+      shell: bash
+      run: |
+        sudo apt install -qq libcurl4-gnutls-dev
+    - name: Run Tests
+      run: |
+        make
+        make test
+
+  macos:
+    name: macOS
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: System Setup
+      shell: bash
+      run: |
+        : # noop
+    - name: Run Tests
+      run: |
+        make
+        make test
