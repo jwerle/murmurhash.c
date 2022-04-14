@@ -3,7 +3,11 @@
   "version": "0.0.3",
   "repo": "jwerle/murmurhash.c",
   "description": "MurmurHash3 general hash bashed lookup function implementation",
+  "makefile": "Makefile",
   "keywords": ["murmur", "hash", "murmurhash"],
   "license": "MIT",
-  "src": [ "murmurhash.h", "murmurhash.c" ]
+  "src": [
+    "murmurhash.h",
+    "murmurhash.c"
+  ]
 }
