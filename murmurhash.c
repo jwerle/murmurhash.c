@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "murmurhash.h"
+#define __USE_MISC
+#include <endian.h>
 
 uint32_t
 murmurhash (const char *key, uint32_t len, uint32_t seed) {
@@ -33,7 +35,7 @@ murmurhash (const char *key, uint32_t len, uint32_t seed) {
   // for each 4 byte chunk of `key'
   for (i = -l; i != 0; ++i) {
     // next 4 byte chunk of `key'
-    k = chunks[i];
+    k = htole32(chunks[i]);
 
     // encode next 4 byte chunk of `key'
     k *= c1;
