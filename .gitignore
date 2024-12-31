@@ -22,3 +22,5 @@
 *.x86_64
 *.hex
 murmur
+example
+test
