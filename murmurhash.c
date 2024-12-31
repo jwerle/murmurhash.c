@@ -1,13 +1,30 @@
 /**
  * `murmurhash.h' - murmurhash
  *
- * copyright (c) 2014-2022 joseph werle <joseph.werle@gmail.com>
+ * copyright (c) 2014-2025 joseph werle <joseph.werle@gmail.com>
  */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
 #include "murmurhash.h"
+
+#if MURMURHASH_WANTS_HTOLE32
+#define MURMURHASH_HAS_HTOLE32 1
+#ifndef htole32
+static uint32_t htole32 (uint32_t value) {
+#if __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+  value = (
+    ((value & 0xFF000000) >> 24) |
+    ((value & 0x00FF0000) >> 8)  |
+    ((value & 0x0000FF00) << 8)  |
+    ((value & 0x000000FF) << 24)
+  );
+#endif
+  return value;
+}
+#endif
+#endif
 
 uint32_t
 murmurhash (const char *key, uint32_t len, uint32_t seed) {
@@ -33,7 +50,11 @@ murmurhash (const char *key, uint32_t len, uint32_t seed) {
   // for each 4 byte chunk of `key'
   for (i = -l; i != 0; ++i) {
     // next 4 byte chunk of `key'
+  #if MURMURHASH_HAS_HTOLE32
+    k = htole32(chunks[i]);
+  #else
     k = chunks[i];
+  #endif
 
     // encode next 4 byte chunk of `key'
     k *= c1;
