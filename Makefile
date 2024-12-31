@@ -8,7 +8,7 @@ MAN_FILES = $(wildcard man/*.md)
 LIB ?= libmurmurhash.so
 INCLUDE ?= murmurhash.h
 
-all: $(LIB) $(BIN)
+all: $(LIB) $(BIN) example
 
 $(LIB):
 	$(CC) -shared $(SRC) $(CFLAGS) -o $(LIB)
@@ -20,9 +20,10 @@ clean:
 	rm -f test
 	rm -f $(BIN)
 	rm -f $(LIB)
+	rm -f example
 
-example:
-	$(CC) murmurhash_example.c -lmurmurhash -o murmurhash_example
+example: example.c murmurhash.c
+	$(CC) $^ -o $@
 
 test:
 	$(CC) test.c $(SRC) $(CFLAGS) -o test
