@@ -1,7 +1,7 @@
 
 BIN ?= murmur
 SRC = murmurhash.c
-CFLAGS += -std=c99 -Wall -I.
+CFLAGS += -std=c99 -Wall -I. -DMURMURHASH_WANTS_HTOLE32=1
 PREFIX ?= /usr/local
 MANPREFIX ?= $(PREFIX)/share/man
 MAN_FILES = $(wildcard man/*.md)
