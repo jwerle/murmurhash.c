@@ -1,5 +1,5 @@
-murmur(1) -- Command line MurmurHash3 tility
-=================================
+murmur(1) -- Command line MurmurHash3 Utility
+=============================================
 
 ## SYNOPSIS
 
