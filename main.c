@@ -1,31 +1,35 @@
-
 /**
  * `main.c' - murmurhash
  *
- * copyright (c) 2014 joseph werle <joseph.werle@gmail.com>
+ * copyright (c) 2014-2025 joseph werle <joseph.werle@gmail.com>
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <inttypes.h>
+
 #include "murmurhash.h"
 
-static void
-usage () {
+#define hash(key) murmurhash(key, (uint32_t) strlen(key), (uint32_t) atoi(seed));
+#define isopt(opt, str) (0 == strncmp(opt, str, strlen(str)))
+#define setopt(opt, key, var) {               \
+  size_t len = strlen(key) + 1;               \
+  for (int i = 0; i < len; ++i) { (*opt)++; } \
+  var = opt;                                  \
+}
+
+static void usage () {
   fprintf(stderr, "usage: murmur [-hV] [options]\n");
 }
 
-static void
-help () {
+static void help () {
   fprintf(stderr, "\noptions:\n");
   fprintf(stderr, "\n  --seed=[seed]  hash seed (optional)");
   fprintf(stderr, "\n");
 }
 
-static char *
-read_stdin () {
+static char* read_stdin () {
   size_t bsize = 1024;
   size_t size = 1;
   char buf[bsize];
@@ -64,24 +68,15 @@ read_stdin () {
   return NULL;
 }
 
-#define isopt(opt, str) (0 == strncmp(opt, str, strlen(str)))
-
-#define setopt(opt, key, var) {               \
-  size_t len = strlen(key) + 1;               \
-  for (int i = 0; i < len; ++i) { (*opt)++; } \
-  var = opt;                                  \
-}
-
-int
-main (int argc, char **argv) {
-  char *buf = NULL;
-  char *key = NULL;
-  char *seed = NULL;
+int main (int argc, char** argv) {
+  char* buf = NULL;
+  char* key = NULL;
+  char* seed = NULL;
   uint32_t h = 0;
 
   // parse opts
-  {
-    char *opt = NULL;
+  do {
+    char* opt = NULL;
     opt = *argv++; // unused
 
     while ((opt = *argv++)) {
@@ -111,13 +106,11 @@ main (int argc, char **argv) {
         }
       }
     }
-  }
+  } while (0);
 
   if (NULL == seed) {
     seed = "0";
   }
-
-#define hash(key) murmurhash(key, (uint32_t) strlen(key), (uint32_t) atoi(seed));
 
   if (1 == isatty(0)) { return 1; }
   else if (ferror(stdin)) { return 1; }
@@ -135,8 +128,6 @@ main (int argc, char **argv) {
       printf("%d" PRIu32 "\n", h);
     } while (NULL != key);
   }
-
-#undef hash
 
   return 0;
 }

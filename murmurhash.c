@@ -1,9 +1,8 @@
 /**
- * `murmurhash.h' - murmurhash
+ * `murmurhash.c' - murmurhash
  *
  * copyright (c) 2014-2025 joseph werle <joseph.werle@gmail.com>
  */
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -26,8 +25,7 @@ static uint32_t htole32 (uint32_t value) {
 #endif
 #endif
 
-uint32_t
-murmurhash (const char *key, uint32_t len, uint32_t seed) {
+uint32_t murmurhash (const char *key, uint32_t len, uint32_t seed) {
   uint32_t c1 = 0xcc9e2d51;
   uint32_t c2 = 0x1b873593;
   uint32_t r1 = 15;

@@ -1,8 +1,7 @@
-
 /**
  * `test.c' - murmurhash
  *
- * copyright (c) 2014 joseph werle <joseph.werle@gmail.com>
+ * copyright (c) 2014-2025 joseph werle <joseph.werle@gmail.com>
  */
 
 #include <stdio.h>
@@ -12,8 +11,7 @@
 #include <assert.h>
 #include "murmurhash.h"
 
-int
-main (void) {
+int main (void) {
   uint32_t hash = 0;
   uint32_t seed = 0;
 
